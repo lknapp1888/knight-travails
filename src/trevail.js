@@ -1,21 +1,4 @@
-class Queue {
-    constructor() {
-        this.items = {}
-        this.frontIndex = 0
-        this.backIndex = 0
-    }
-    enqueue(item) {
-        this.items[this.backIndex] = item
-        this.backIndex++
-        return item + ' inserted'
-    }
-    dequeue() {
-        const item = this.items[this.frontIndex]
-        delete this.items[this.frontIndex]
-        this.frontIndex++
-        return item
-    }
-}
+import { Queue } from "./utility";
 
 class Knight {
     constructor(currPos, prevMov = []) { 
@@ -39,7 +22,7 @@ class Knight {
   
   const possMoves = [[2,1],[1,2], [-1,2], [-2,1], [-1,-2],[-2,-1], [1,-2],[2,-1]]
 
-   const trevail = function (start, end) {
+   export const trevail = function (start, end) {
     let visited = {};
     let path = [];
 
@@ -58,7 +41,7 @@ class Knight {
             path = nextNode.prevMov;
             break;
         }
-        console.log(nextNode.prevMov)
+        // console.log(nextNode.prevMov)
 
         let moveList = nextNode.moveList;
 
@@ -73,7 +56,3 @@ class Knight {
    }
    return path;
    }
-
-console.log(trevail([3,3], [0,0]))
-
-
