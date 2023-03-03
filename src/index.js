@@ -1,8 +1,14 @@
 import { Queue } from "./utility";
-import { trevail } from "./trevail";
+import { trevailObj } from "./trevail";
+import './style.css';
+import { UI } from "./UI";
 
 
 
-console.log(trevail([3,3], [1,1]))
+
+// console.log(trevailObj.trevail([3,3], [1,1]))
+UI.loadBoard()
+UI.initSquareSelection()
+UI.initTrevailBtn()
 
 
