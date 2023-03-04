@@ -1,3 +1,7 @@
+* {
+  --arrow-color: rgb(0, 0, 0);
+}
+
 body {
     background-color: #333;
     color: #fff;
@@ -20,7 +24,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
+
+
   .square.black {
     background-color: #b58863;
   }
@@ -32,13 +39,77 @@ body {
     background-color: red;
   }
 
-  .square.trevailed {
-    background-color: aqua;
-  }
-
   .square:hover {
     background-color: red;
   }
 
-  .interface {
+  .arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+
+  .upArr {
+    border-bottom: 10px solid var(--arrow-color);
+    opacity: 0;
+  }
+  
+  .downArr {
+    border-top: 10px solid var(--arrow-color);
+    opacity: 0;
+  }
+  
+  .leftArr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid var(--arrow-color);
+    opacity: 0;
+  }
+  
+  .rightArr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(0, -50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--arrow-color);
+    opacity: 0;
+  }
+  
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    color:  var(--arrow-color);
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  
+  
+  .circle span {
+    position: relative;
+    top: -2px;
+  }
+
+  .activeSquare {
+    opacity: 1;
   }
