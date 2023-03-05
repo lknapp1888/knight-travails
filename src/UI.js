@@ -28,6 +28,20 @@ export const UI = {
     }
   },
 
+  resetBoard: function () {
+    this.startCoord = null;
+    this.targetCoord = null;
+    this.path = null;
+    const board = document.querySelector('.board')
+    while (board.lastChild) {
+      board.removeChild(board.lastChild);
+  };
+  UI.loadBoard()
+  UI.initSquareSelection()
+  UI.initTrevailBtn()
+  uiStorage.userMessage.innerText = "Select the starting square!";
+  },
+
   initSquareInnerHtml: function () {
     const squares = document.getElementsByClassName("square");
     for (let i = 0; i < squares.length; i++) {
@@ -75,6 +89,13 @@ export const UI = {
         }
       });
     }
+  },
+
+  initResetBtn: function () {
+    uiStorage.resetBtn.addEventListener('click', () => {
+      console.log('reset working')
+      UI.resetBoard()
+    })
   },
 
   initTrevailBtn: function () {
@@ -133,4 +154,5 @@ const uiStorage = {
   board: document.querySelector(".board"),
   userMessage: document.querySelector(".userMessage"),
   trevailBtn: document.querySelector(".trevailBtn"),
+  resetBtn: document.querySelector(".resetBtn")
 };

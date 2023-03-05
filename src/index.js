@@ -7,5 +7,6 @@ import { UI } from "./UI";
 UI.loadBoard()
 UI.initSquareSelection()
 UI.initTrevailBtn()
+UI.initResetBtn()
 
 
