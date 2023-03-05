@@ -52,8 +52,9 @@ export const UI = {
     for (let i = 0; i < squares.length; i++) {
       squares.item(i).addEventListener("click", (e) => {
         if (UI.startCoord === null) {
-          const xCoord = parseInt(e.path[0].classList[2][1]);
-          const yCoord = parseInt(e.path[0].classList[2][2]);
+          console.log(e.target.classList)
+          const xCoord = parseInt(e.target.classList[2][1]);
+          const yCoord = parseInt(e.target.classList[2][2]);
           UI.startCoord = [xCoord, yCoord];
           squares.item(i).classList.add("start");
           squares.item(i).innerHTML = "<p>S<p/>";
@@ -62,8 +63,8 @@ export const UI = {
           return;
         }
         if (UI.targetCoord === null) {
-          const xCoord = parseInt(e.path[0].classList[2][1]);
-          const yCoord = parseInt(e.path[0].classList[2][2]);
+          const xCoord = parseInt(e.target.classList[2][1]);
+          const yCoord = parseInt(e.target.classList[2][2]);
           UI.targetCoord = [xCoord, yCoord];
           squares.item(i).classList.add("target");
           squares.item(i).innerHTML = "<p>T<p/>";
