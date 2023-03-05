@@ -92,7 +92,7 @@ export const UI = {
         if (i % 3 === 0) {
             const circle = document.querySelector(`.circle${currX}${currY}`)
             circle.classList.add('activeSquare')
-            circle.innerHTML = `<span>${i / 3}</span>`
+            circle.innerHTML = `<span class="pathNum">${i / 3}</span>`
             continue
         }
         if (nextX - currX === 1) {
@@ -118,6 +118,8 @@ export const UI = {
       }
       const target = document.querySelector('.target')
       target.innerHTML = `<p>${(UI.path.length - 1) / 3}<p/>`
+      const userMessage = document.querySelector('.userMessage')
+      userMessage.innerText = `You made it in ${(UI.path.length - 1) / 3} moves`
     });
   },
 

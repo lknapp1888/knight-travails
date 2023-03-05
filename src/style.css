@@ -1,30 +1,60 @@
 * {
   --arrow-color: rgb(0, 0, 0);
+  --background-color: #333;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('./Inter-Medium.ttf') format('openType');
+  font-weight: 600;
+  font-style: normal;
 }
 
 body {
-    background-color: #333;
+    background-color: var(--background-color);
     color: #fff;
     font-family: sans-serif;
     display: flex;  
-    flex-direction: column;
+    justify-content: center;
+    font-family: MyFont;
   }
+  .mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 50px;
+  }
+  .userMessage, .description {
+    font-size: 32px;
+    max-width: 800px;
+  }
+
+
   .board {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
+    width: 800px;
+    height: 800px;
   }
   .square {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     text-align: center;
-    font-size: 30px;
-    line-height: 50px;
+    font-size: 60px;
+    line-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+  }
+
+  .interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 
@@ -51,40 +81,32 @@ body {
     display: block;
     width: 0;
     height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    opacity: 0;
   }
 
   .upArr {
-    border-bottom: 10px solid var(--arrow-color);
-    opacity: 0;
+    border-bottom: 20px solid var(--arrow-color);
   }
   
   .downArr {
-    border-top: 10px solid var(--arrow-color);
-    opacity: 0;
+    border-top: 20px solid var(--arrow-color);
+  }
+
+  .leftArr, .rightArr {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
   }
   
   .leftArr {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-100%, -50%);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid var(--arrow-color);
-    opacity: 0;
+    border-right: 20px solid var(--arrow-color);
   }
   
   .rightArr {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(0, -50%);
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid var(--arrow-color);
-    opacity: 0;
+    border-left: 20px solid var(--arrow-color);
   }
   
   .circle {
@@ -96,7 +118,7 @@ body {
     border-radius: 50%;
     background-color: transparent;
     color:  var(--arrow-color);
-    font-size: 30px;
+    font-size: 60px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -113,3 +135,88 @@ body {
   .activeSquare {
     opacity: 1;
   }
+
+  /* Buttons */
+
+button  {
+    appearance: none;
+    background-color: white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+    border: 2px solid;
+    color: var(--background-color);
+    width: 200px;
+    height: 50px;
+}
+
+
+button:hover{
+    color: white;
+    background-color: var(--background-color);
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .description, .userMessage {
+    width: 320px;
+    font-size: 16px;
+  }
+  .board {
+    width: 320px;
+    height: 320px;
+  }
+  .square {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+  }
+
+  .upArr {
+    border-bottom: 10px solid var(--arrow-color);
+  }
+  
+  .downArr {
+    border-top: 10px solid var(--arrow-color);
+  }
+
+  .leftArr, .rightArr {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  
+  .leftArr {
+    border-right: 10px solid var(--arrow-color);
+  }
+  
+  .rightArr {
+    border-left: 10px solid var(--arrow-color);
+  }
+  
+  .circle {
+
+    height: 15px;
+    width: 15px;
+    font-size: 30px;
+}
+}
