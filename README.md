@@ -1,6 +1,6 @@
 # knight-trevails
 
-live preview of the site is available  [here](https://lknapp1888.github.io/knight-travails/)
+Live preview of the site is available  [here](https://lknapp1888.github.io/knight-travails/)
 
 ## Project aims
 
@@ -27,14 +27,17 @@ While there is a knight in the queue, we check to see if its current coordinates
 This loop establishes the shortest possible set of moves from one coordinate to another by calculating all of the potential target coordinates from one point, then all of the potential target coordinates from each of those points, repeating this loop until a 'match' is found with the original target coordinates.
 
 Given that the travail function keeps track of visited squares (and have therefore already checked that squares move list) and does not create a new knight for visited squares, the time complexity of the algorithm is reduced.
+
 ## Outcomes
 
 - Learnt to utilise queue algorithm with `enqueue()` and `dequeue()` operations
 - Improved understanding of 'tree-like' data structures. How these can solve problems such as 'Knight Travails' in addition to considering other potential use cases
+
 ## Challenges
 
 I set out to not rely on an existing solution for the problem so it was quite challenging to establish an algorithm. My research point me towards using a queue algorithm, but the remainder of the travail function was written with minimal online research, and was built off previous learning of data structures (etc. Binary search trees, linked lists). This did ensure that the project was an exercise in logical thinking and problem solving, and was at times quite difficult.
-## Improvements
+
+## Potential improvements
 
 - Improve commenting throughout the application.
 - Use a more time efficient algorithm.
